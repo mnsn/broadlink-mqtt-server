@@ -26,7 +26,8 @@ in order to run on windows you need to:
 1) provide your internal network ip prefix
 or your ip in a global environment called `IP_PREFIX`
 2) find your broadcast ip by calling ipconfig as described [here](https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/gsins/determining-the-broadcast-address.html)
-3)set global environment called `BROADCAST_ADDRESS` with your broadcast adress
+3) set global environment called `BROADCAST_ADDRESS` with your broadcast address (or your broadlink address)
+
 you can also add a config.json to the root of your project with the above parameters
 ####for example run
 ```bash
