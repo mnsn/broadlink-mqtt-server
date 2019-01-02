@@ -41,4 +41,3 @@ $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node yourApp.js
   "IP_PREFIX": "10.0.0"
 }
 ```
-you can also just put your broadlink ip as the broadcast address, if you like
