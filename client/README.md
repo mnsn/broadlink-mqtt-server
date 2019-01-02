@@ -1,8 +1,8 @@
 # Client side app
 * should be deployed to your favorite cloud, or anywhere with global domain that can be provided to IFTT.
 * this application should publish commands to your local network server using mqtt.
-* requires your `MQTT_URL` in the running global enviorment.
-* it can be done using serverless function follow [this link](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) (section D) for more.
+* requires your `MQTT_URL` as a global enviorment
+* you can use aserverless function instead of this client follow [this link](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) (section D) for more.
 ## After deploying 
 go to IFTT and add an applet
 * Trigger: Google Assistant — Say a simple phrase. e.g. “turn on Streamer.”
