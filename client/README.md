@@ -1,4 +1,4 @@
-#Client side app
+# Client side app
 * should be deployed to your favorite cloud, or anywhere with global domain that can be provided to IFTT.
 * this application should publish commands to your local network server using mqtt.
 * requires your `MQTT_URL` in the running global enviorment.
