@@ -17,7 +17,7 @@ for example:
 ```json
 {
   "switchInput": [{"topic":"tv","action":"input"},{"topic":"tv","action":"input"},{"topic":"tv","action":"ok"}],
-  "secondScene": [...]
+  "secondScene": [{"topic":"devicename","action":"action"},{}]
 }
 ```
 Running the server on
