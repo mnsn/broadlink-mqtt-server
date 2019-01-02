@@ -8,6 +8,7 @@ in https://www.cloudmqtt.com/
 
 the server part is running on your local network
 and there is the client part that runs on a machine in the cloud with public endpoint or a static ip
+
 Define scenes
 -------
 add the scene name and commands to `scenes-data.json`
