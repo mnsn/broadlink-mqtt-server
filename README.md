@@ -1,5 +1,5 @@
 # Node js app for home automation with broadlink and google home
-based on [this blog](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) and using [this nodejs to broadlink lib](https://github.com/momodalo/broadlinkjs)
+based on [this blog](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) and using [this nodejs broadlink lib](https://github.com/momodalo/broadlinkjs)
 
 this app provides a simple server for controlling broadlink devices from google home.
 
