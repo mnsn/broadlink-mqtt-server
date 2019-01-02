@@ -1,0 +1,30 @@
+{
+  "name": "broadlink-mqtt-server",
+  "version": "0.0.1",
+  "description": "an home control for google assistant",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Broadlink",
+    "IoT",
+    "google",
+    "google asistant",
+    "google home",
+    "remote",
+    "control"
+  ],
+  "author": "Asaf Manassen",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^7.0.5",
+    "express": "^4.16.4",
+    "mqtt": "^2.18.8",
+    "nconf": "^0.10.0"
+  },
+  "directories": {
+    "test": "test"
+  }
+}

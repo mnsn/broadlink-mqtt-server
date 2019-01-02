@@ -1,0 +1,3 @@
+{
+  "switchInput": [{"topic":"tv","action":"switchInput"},{"topic":"tv","action":"switchInput"},{"topic":"tv","action":"ok"}]
+}
