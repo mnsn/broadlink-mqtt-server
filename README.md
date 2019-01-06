@@ -27,6 +27,8 @@ $ npm install
 $ node server.js
 
 ```
+send a request to your client endpoint 
+something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
 
 
@@ -45,6 +47,11 @@ you can also add a config.json to the root of your project with the above parame
 $ npm install
 $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node server.js
 ```
+send a request to your client endpoint 
+something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
+
+
+
 
 ##### config.json example
 ```json
