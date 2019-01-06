@@ -20,6 +20,16 @@ for example:
   "secondScene": [{"topic":"devicename","action":"action"},{}]
 }
 ```
+Running the server on linux\mac
+--------
+```bash
+$ npm install
+$ node server.js
+
+```
+
+
+
 Running the server on Windows
 --------
 in order to run on windows you need to:
@@ -32,7 +42,8 @@ you can also add a config.json to the root of your project with the above parame
 
 #### For example run
 ```bash
-$ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node yourApp.js
+$ npm install
+$ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node server.js
 ```
 
 ##### config.json example
