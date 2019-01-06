@@ -16,17 +16,20 @@ and there is the [client](/client) part that runs on a machine in the cloud with
 #### Running the server on linux\mac
 
 ##### Option 1
-run:
+
+* Run:
 ```bash
 $ npm install
 $ MQTT_URL=mqtts://{{username}}:{{password}}@{{mqtt url}}:{{port}} node server.js
 ```
-Send a request to your client endpoint,<br/> 
+* Send a request to your client endpoint,<br/> 
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
-see that your broadlink enters learning mode
+* See that your broadlink enters learning mode
 
 ##### Option 2
+
+* Create config.json on the root of your project
 config.json example: 
 ```json
 {
@@ -34,17 +37,17 @@ config.json example:
 }
 ```
 
-then just run
+* Run
 
 ```bash
 $ npm install
 $ node server.js
 
 ```
-Send a request to your client endpoint,<br/> 
+* Send a request to your client endpoint,<br/> 
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
-see that your broadlink enters learning mode
+* See that your broadlink enters learning mode
 
 
 
@@ -60,17 +63,20 @@ in a global environment called `IP_PREFIX`
 You can also add a config.json to the root of your project with the above parameters
 
 ##### Option 1
-run:
+
+* run:
 ```bash
 $ npm install
 $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 MQTT_URL=mqtts://{{username}}:{{password}}@{{mqtt url}}:{{port}} node server.js
 ```
-Send a request to your client endpoint,<br/> 
+* Send a request to your client endpoint,<br/> 
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
-see that your broadlink enters learning mode
+* See that your broadlink enters learning mode
 
 ##### Option 2
+
+* Create config.json on the root of your project
 config.json example: 
 ```json
 {
@@ -80,17 +86,17 @@ config.json example:
 }
 ```
 
-then just run
+* Run
 
 ```bash
 $ npm install
 $ node server.js
 
 ```
-Send a request to your client endpoint,<br/> 
+* Send a request to your client endpoint,<br/> 
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
-see that your broadlink enters learning mode
+* See that your broadlink enters learning mode
 
 
 Define scenes
