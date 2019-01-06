@@ -1,17 +1,17 @@
 # Node js app for home automation with broadlink and google home
-based on [this blog](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) and using [this nodejs broadlink lib](https://github.com/momodalo/broadlinkjs)
+Based on [this blog](https://medium.com/@dtinth/remotely-turning-on-my-air-conditioner-through-google-assistant-1a1441471e9d) and using [this nodejs broadlink lib](https://github.com/momodalo/broadlinkjs)
 
-this app provides a simple server for controlling broadlink devices from google home.
+This app provides a simple server for controlling broadlink devices from google home.
 
-in order to work with this sample you should register an mqtt account for instance 
+In order to work with this sample you should register an mqtt account for instance 
 in https://www.cloudmqtt.com/ 
 
-the server part is running on your local network
+The server part is running on your local network
 and there is the [client](/client) part that runs on a machine in the cloud with public endpoint or a static ip
 
 Define scenes
 -------
-add the scene name and commands to `scenes-data.json`
+Add the scene name and commands to `scenes-data.json`
 
 for example:
 ```json
@@ -27,31 +27,28 @@ $ npm install
 $ node server.js
 
 ```
-send a request to your client endpoint 
+Send a request to your client endpoint,<br/>
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
 
 
 
 Running the server on Windows
 --------
-in order to run on windows you need to:
-1) provide your internal network ip prefix(or your full ip if you prefer)
+In order to run on windows you need to:
+1) Provide your internal network ip prefix(or your full ip if you prefer)
 in a global environment called `IP_PREFIX`
-2) find your broadcast ip by calling ipconfig as described [here](https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/gsins/determining-the-broadcast-address.html)
-3) set global environment called `BROADCAST_ADDRESS` with your broadcast address (or your broadlink address if you prefer)
+2) Find your broadcast ip by calling ipconfig as described [here](https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/gsins/determining-the-broadcast-address.html)
+3) Set global environment called `BROADCAST_ADDRESS` with your broadcast address (or your broadlink address if you prefer)
 
-you can also add a config.json to the root of your project with the above parameters
+You can also add a config.json to the root of your project with the above parameters
 
 #### For example run
 ```bash
 $ npm install
 $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node server.js
 ```
-send a request to your client endpoint 
+Send a request to your client endpoint,<br/> 
 something like `https://{{your endpoint}}/sendCommand?topic=learn&message={deviceName}:{action}`
-
-
-
 
 ##### config.json example
 ```json
