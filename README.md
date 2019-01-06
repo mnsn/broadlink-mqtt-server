@@ -29,10 +29,12 @@ in a global environment called `IP_PREFIX`
 3) set global environment called `BROADCAST_ADDRESS` with your broadcast address (or your broadlink address if you prefer)
 
 you can also add a config.json to the root of your project with the above parameters
+
 ####for example run
 ```bash
 $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 node yourApp.js
 ```
+
 ##### config.json example
 ```json
 {
