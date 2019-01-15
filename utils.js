@@ -1,30 +1,29 @@
-const fs=require('fs');
+const fs = require('fs');
 let devices = require('./devices-data.json');
 
 
-module.exports=(() => {
+module.exports = (() => {
 	let dev;
-	const setDev=(_dev)=>dev=_dev;
-	const waitSome= (mili) => new Promise(resolve => setTimeout(() => resolve('ok'), mili));
-	const sendData = (deviceName, action) => {
-		return new Promise(resolve => {
-			if (!dev) {
-				throw new Error('dev isn\'t ready');
-			} else if (!devices) {
-				throw new Error('devices parameter isn\'t found');
-			} else if (!deviceName || !action) {
-				throw new Error('missing param')
-			} else if (!devices[deviceName]) {
-				throw new Error(`device ${deviceName} doesn't exist in devices`);
-			} else if (!devices[deviceName][action]) {
-				throw new Error(`device ${deviceName} doesn't have action ${action} in devices`);
-			} else {
-				console.debug(`sending command to ${deviceName} with action ${action}`);
-				let a = Buffer.from(devices[deviceName][action]);
-				dev.sendData(a);
-				resolve('ok');
-			}
-		});
+	const setDev = (_dev) => dev = _dev;
+	const waitSome = (mili) => new Promise(resolve => setTimeout(() => resolve('ok'), mili));
+	const sendData = async (deviceName, action) => {
+		if (!dev) {
+			throw new Error('dev isn\'t ready');
+		} else if (!devices) {
+			throw new Error('devices parameter isn\'t found');
+		} else if (!deviceName || !action) {
+			throw new Error('missing param')
+		} else if (!devices[deviceName]) {
+			throw new Error(`device ${deviceName} doesn't exist in devices`);
+		} else if (!devices[deviceName][action]) {
+			throw new Error(`device ${deviceName} doesn't have action ${action} in devices`);
+		} else {
+			console.debug(`sending command to ${deviceName} with action ${action}`);
+			let a = Buffer.from(devices[deviceName][action]);
+			await dev.sendData(a);
+			return 'ok';
+		}
+
 	};
 	const learnData = async (deviceName, action) => {
 		return new Promise((resolve, reject) => {
@@ -82,12 +81,12 @@ module.exports=(() => {
 				return rec(index + 1);
 			}
 		};
-	return rec(0);
+		return rec(0);
 	};
 
 	return {
 		setDev,
 		sendData,
-		learnData,runScene
-}
+		learnData, runScene
+	}
 })();
