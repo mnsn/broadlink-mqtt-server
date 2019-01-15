@@ -15,93 +15,30 @@ var Broadlink = module.exports = function(){
 util.inherits(Broadlink, EventEmitter);
 
 
-Broadlink.prototype.genDevice = function (devtype, host, mac){
-    var dev;
-    if(devtype == 0){ // SP1
-        dev = new device(host,mac);
-        dev.sp1();
-        return dev;;
-    }else if(devtype == 0x2711){ // SP2
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2719 || devtype == 0x7919 || devtype == 0x271a || devtype == 0x791a){ // Honeywell SP2
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2720){ // SPMini
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x753e){ // SP3
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2728){ // SPMini2
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2733 || devtype == 0x273e){ // OEM branded SPMini
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype >= 0x7530 && devtype <= 0x7918){ // OEM branded SPMini2
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2736){ // SPMiniPlus
-        dev = new device(host,mac);
-        dev.sp2();
-        return dev;;
-    }else if(devtype == 0x2712){ // RM2
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x2737){ // RM Mini
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x273d){ // RM Pro Phicomm
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x2783){ // RM2 Home Plus
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x277c){ // RM2 Home Plus GDT
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x272a){ // RM2 Pro Plus
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x2787){ // RM2 Pro Plus2
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x278b){ // RM2 Pro Plus BL
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x278f){ // RM Mini Shate
-        dev = new device(host,mac);
-        dev.rm();
-        return dev;;
-    }else if(devtype == 0x2714){ // A1
-        dev = new device(host,mac);
+Broadlink.prototype.genDevice = function (devtype, host, mac) {
+    var dev = new device(host, mac);
+    const sp2Codes=[/*SP2*/0x2711,/*Honeywell SP2*/0x2711,0x2719,0x7919,0x271a,0x791a,/*SPMini*/0x2720,
+        /*SP3*/ 0x753e, /*SPMini2*/ 0x2728,  /*OEM branded SPMini*/0x2733,0x273e,
+        /*SPMiniPlus*/0x2736];
+    const rmCodes=[/*RM2*/0x2712,/*RM Mini*/0x2737,/*RM Pro Phicomm*/0x273d,
+    /*RM2 Home Plus*/0x2783,/*RM2 Pro Plus*/0x272a, /*RM2 Home Plus GDT*/0x277c,
+      /*RM2 Pro Plus2*/0x2787,/*RM2 Pro Plus BL*/0x278b,/*RM Mini Shate*/0x278f,
+    ];
+
+     if(devtype===0) {
+         dev.sp1();
+     }else if(sp2Codes.indexOf(devtype)>=0||/* OEM branded SPMini2*/(devtype >= 0x7530 && devtype <= 0x7918)){
+         dev.sp2();
+     }else if(rmCodes.indexOf(devtype)>=0){
+
+     }else if(devtype === 0x2714){ // A1
         dev.a1();
-        return dev;;
-    }else if(devtype == 0x4EB5){ // MP1
-        dev = new device(host,mac);
+    }else if(devtype === 0x4EB5){ // MP1
         dev.mp1();
-        return dev;;
     }else{
-        dev = new device(host,mac);
         dev.device();
-        return dev;;
     }
+    return dev;
 }
 
 Broadlink.prototype.discover = function(defaultaddress,cb){
