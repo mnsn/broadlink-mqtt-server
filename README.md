@@ -12,14 +12,15 @@ in https://www.cloudmqtt.com/
 The server part is running on your local network
 and there is the [client](/client) part that runs on a machine in the cloud with public endpoint or a static ip
 
-### Run the server
+### Run the home server
 
-#### Running the server on linux\mac
+#### Running the home server on linux\mac
 
 ##### Option 1
 
 * Run:
 ```bash
+$ cd home-server
 $ npm install
 $ MQTT_URL=mqtts://{{username}}:{{password}}@{{mqtt url}}:{{port}} node server.js
 ```
@@ -41,6 +42,7 @@ config.json example:
 * Run
 
 ```bash
+$ cd home-server
 $ npm install
 $ node server.js
 
@@ -52,7 +54,7 @@ something like `https://{{your endpoint}}/sendCommand?topic=learn&message={devic
 
 
 
-#### Running the server on Windows
+#### Running the home server on Windows
 
 
 In order to run on windows you need to:
@@ -67,6 +69,7 @@ You can also add a config.json to the root of your project with the above parame
 
 * run:
 ```bash
+$ cd home-server
 $ npm install
 $ IP_PREFIX=10.0.0 BROADCAST_ADDRESS=10.0.0.255 MQTT_URL=mqtts://{{username}}:{{password}}@{{mqtt url}}:{{port}} node server.js
 ```
@@ -90,6 +93,7 @@ config.json example:
 * Run
 
 ```bash
+$ cd home-server
 $ npm install
 $ node server.js
 
@@ -105,7 +109,7 @@ Define scenes
 
 Scenes are several commands that runs on a single call
 
-Add the scene name and commands to `scenes-data.json`
+Add the scene name and commands to `home-server/scenes-data.json`
 
 for example:
 ```json

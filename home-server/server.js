@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-let broadlink = require('./external-libs/broadlink');
+let broadlink = require('../external-libs/broadlink');
 let fs = require('fs');
 const util = require('util');
 var b = new broadlink();

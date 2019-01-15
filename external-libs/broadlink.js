@@ -6,7 +6,7 @@ let crypto = require('crypto');
 const nconf = require('nconf');
 nconf.argv()
 	.env()
-	.file({file: 'config.json'});
+	.file({file: '../config.json'});
 
 var Broadlink = module.exports = function () {
 	EventEmitter.call(this);
